@@ -1,10 +1,10 @@
 import mysql from 'mysql2';
 
 const pool = mysql.createPool({
-    host: 'b76ni8sbrvmynxz76onr-mysql.services.clever-cloud.com',
-    user: 'u7sbidg62hp8venh',
-    database: 'b76ni8sbrvmynxz76onr',
-    password: 'zwfSbOmlXyYHNeDKgtAa',       
+    host: 'bsoksr5omeheaomrwuxu-mysql.services.clever-cloud.com',
+    user: 'u0xv0y5yyk3rv7kv',
+    database: 'bsoksr5omeheaomrwuxu',
+    password: 'WJvUpy9gWAlvHV2lHEam',       
 }).promise(); 
 
 // Function to create tables if they do not exist
