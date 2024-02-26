@@ -34,7 +34,7 @@ const EmployeeForm = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:8000/form/submit', formData);
+      await axios.post('https://employee-management-5lbx.onrender.com/form/submit', formData);
       alert('Employee added successfully!');
     } catch (error) {
       alert('Failed to add employee. Please try again.');
