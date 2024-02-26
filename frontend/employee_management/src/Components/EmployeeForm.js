@@ -40,7 +40,6 @@ const EmployeeForm = () => {
       alert('Failed to add employee. Please try again.');
     }
   };
-  
 
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
@@ -57,120 +56,137 @@ const EmployeeForm = () => {
         {currentStep === 1 && (
           <>
             <div className="form-group">
+              <label htmlFor="name">Employee Name:</label>
               <input
                 type="text"
                 name="name"
+                id="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Employee Name"
                 maxLength={30}
                 required
               />
             </div>
             <div className="form-group">
-          <input
-            type="text"
-            name="employeeId"
-            value={formData.employeeId}
-            onChange={handleChange}
-            placeholder="Employee ID"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <select
-            name="department"
-            value={formData.department}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Department</option>
-            <option value="IT">IT</option>
-            <option value="HR">HR</option>
-            <option value="Finance">Finance</option>
-            <option value="Finance">Logistics</option>
-            <option value="Finance">Designing</option>
-          </select>
-        </div>
-        <div className="form-group">
-          <input
-            type="date"
-            name="dob"
-            value={formData.dob}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-        
-          <label><h4>GENDER:</h4></label>
-          <div className="radio-group">
-            <label>
+              <label htmlFor="employeeId">Employee ID:</label>
               <input
-                type="radio"
-                name="gender"
-                value="Male"
+                type="text"
+                name="employeeId"
+                id="employeeId"
+                value={formData.employeeId}
                 onChange={handleChange}
                 required
-              />{' '}
-              Male
-            </label>
-            <label>
-              <input
-                type="radio"
-                name="gender"
-                value="Female"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="department">Department:</label>
+              <select
+                name="department"
+                id="department"
+                value={formData.department}
                 onChange={handleChange}
                 required
-              />{' '}
-              Female
-            </label>
-          </div>
-        </div>
-        <div className="form-group">
-          <input
-            type="text"
-            name="designation"
-            value={formData.designation}
-            onChange={handleChange}
-            placeholder="Designation"
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input
-            type="number"
-            name="salary"
-            value={formData.salary}
-            onChange={handleChange}
-            placeholder="Salary"
-            maxLength={8}
-            required
-          />
-        </div>
-
+              >
+                <option value="">Select Department</option>
+                <option value="IT">IT</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Logistics">Logistics</option>
+                <option value="Designing">Designing</option>
+              </select>
+            </div>
+            <div className="form-group">
+              <label htmlFor="dob">Date of Birth:</label>
+              <input
+                type="date"
+                name="dob"
+                id="dob"
+                value={formData.dob}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label><h4>GENDER:</h4></label>
+              <div className="radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="Male"
+                    onChange={handleChange}
+                    required
+                  />{' '}
+                  Male
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="gender"
+                    value="Female"
+                    onChange={handleChange}
+                    required
+                  />{' '}
+                  Female
+                </label>
+              </div>
+            </div>
+            <div className="form-group">
+              <label htmlFor="designation">Designation:</label>
+              <input
+                type="text"
+                name="designation"
+                id="designation"
+                value={formData.designation}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="salary">Salary:</label>
+              <input
+                type="number"
+                name="salary"
+                id="salary"
+                value={formData.salary}
+                onChange={handleChange}
+                min={1} // Minimum value set to 1
+                required
+              />
+            </div>
           </>
         )}
 
         {currentStep === 2 && (
           <>
             <div className="form-group">
-              <input
-                type="text"
+              <label htmlFor="blood_group">Blood Group:</label>
+              <select
                 name="blood_group"
+                id="blood_group"
                 value={formData.blood_group}
                 onChange={handleChange}
-                placeholder="Blood Group"
                 required
-              />
+              >
+                <option value="">Select Blood Group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
             </div>
             <div className="form-group">
+              <label htmlFor="experience">Experience:</label>
               <input
                 type="text"
                 name="experience"
+                id="experience"
                 value={formData.experience}
                 onChange={handleChange}
-                placeholder="Experience"
                 required
               />
             </div>
@@ -200,32 +216,35 @@ const EmployeeForm = () => {
               </div>
             </div>
             <div className="form-group">
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 name="email"
+                id="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Email"
                 required
               />
             </div>
             <div className="form-group">
+              <label htmlFor="phone_number">Phone Number:</label>
               <input
                 type="tel"
                 name="phone_number"
+                id="phone_number"
                 value={formData.phone_number}
                 onChange={handleChange}
-                placeholder="Phone Number"
                 required
               />
             </div>
             <div className="form-group">
+              <label htmlFor="joining_date">Joining Date:</label>
               <input
                 type="date"
                 name="joining_date"
+                id="joining_date"
                 value={formData.joining_date}
                 onChange={handleChange}
-                placeholder="Joining Date"
                 required
               />
             </div>
